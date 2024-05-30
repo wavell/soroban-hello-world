@@ -52,10 +52,14 @@ fn test_store_and_retrieve_value() {
 	// let key = symbol!("mykey");
 	let key = symbol_short!("mykey");
 	// let value = 42;
-    let value = vec![&env, (2, 20)];
-	// let lat_deg = 40.7128; // Example latitude
-	// let lon_deg = -74.0060; // Example longitude
+    // let value = vec![&env, (2, 20)];
+	let lat_deg = 40.7128; // Example latitude
+	let lon_deg = -74.0060; // Example longitude
     // let value = vec![&env, (lat_deg, lon_deg)];
+    let scale_factor = 1_000_000.0; // Scale factor for precision
+    let latitude = (lat_deg * scale_factor) as i64;
+    let longitude = (lon_deg * scale_factor) as i64;
+    let value = vec![&env, (latitude, longitude)];
 
 	// Store the value
 	client.store_value(&key, &value);
