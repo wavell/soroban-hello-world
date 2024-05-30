@@ -12,13 +12,13 @@ cargo install --git https://github.com/stellar/stellar-cli soroban-cli
 ```
 git clone https://github.com/wavell/lora-demo.git
 
-## probably don;t need to do
+## probably don't need to do
 soroban network add \
   --global testnet \
   --rpc-url https://soroban-testnet.stellar.org:443 \
   --network-passphrase "Test SDF Network ; September 2015"
 
-## probably don;t need to do	
+## probably don't need to do	
 soroban keys generate --global alice --network testnet
 	
 cargo build --target wasm32-unknown-unknown --release
