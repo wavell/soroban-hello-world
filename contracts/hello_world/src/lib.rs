@@ -43,9 +43,9 @@ pub struct SimpleStorageContract;
 #[contractimpl]
 impl SimpleStorageContract {
     pub fn store_value(env: Env, key: Symbol, value: Vec<(i32, i32)>) {
-        let map = vec![&env, (2, 20)];
-        // env.storage().persistent().set(&key, &value);
-        env.storage().persistent().set(&key, &map);
+        // let map = vec![&env, (2, 20)];
+        // env.storage().persistent().set(&key, &map);
+        env.storage().persistent().set(&key, &value);
     }
 
     pub fn retrieve_value(env: Env, key: Symbol) -> Option<Vec<(i32, i32)>> {
