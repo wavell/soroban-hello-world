@@ -1,6 +1,4 @@
 #![no_std]
-// use soroban_sdk::{contract, contractimpl, symbol_short, vec, Env, Symbol, Vec, Map};
-// use soroban_sdk::{contract, contractimpl, Env, Vec, Symbol, Map, symbol_short, vec};
 use soroban_sdk::{contract, contractimpl, Env, Vec, Symbol, symbol_short, vec};
 
 #[contract]
@@ -38,16 +36,18 @@ impl GeoCoordinate {
 }
 
 #[contract]
-pub struct SimpleStorageContract;
+pub struct GeoContract;
 
 #[contractimpl]
-impl SimpleStorageContract {
+impl GeoContract {
     pub fn store_value(env: Env, key: Symbol, value: Vec<(i64, i64)>) {
-        // let map = vec![&env, (2, 20)];
-        // env.storage().persistent().set(&key, &map);
+        // let datetime = env.ledger().timestamp();
+        // let value_and_date = vec![&env, (value, datetime)];
         env.storage().persistent().set(&key, &value);
+        // env.storage().persistent().set(&key, &value_and_date);
     }
 
+    // pub fn retrieve_value(env: Env, key: Symbol) -> Option<Vec<(i64, i64, u64)>> {
     pub fn retrieve_value(env: Env, key: Symbol) -> Option<Vec<(i64, i64)>> {
         env.storage().persistent().get(&key)
     }

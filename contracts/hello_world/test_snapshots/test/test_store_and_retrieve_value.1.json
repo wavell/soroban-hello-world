@@ -22,7 +22,7 @@
           "contract_data": {
             "contract": "CAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD2KM",
             "key": {
-              "symbol": "mykey"
+              "symbol": "LoRaKey"
             },
             "durability": "persistent"
           }
@@ -35,7 +35,7 @@
                 "ext": "v0",
                 "contract": "CAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD2KM",
                 "key": {
-                  "symbol": "mykey"
+                  "symbol": "LoRaKey"
                 },
                 "durability": "persistent",
                 "val": {
@@ -136,7 +136,7 @@
             "data": {
               "vec": [
                 {
-                  "symbol": "mykey"
+                  "symbol": "LoRaKey"
                 },
                 {
                   "vec": [
@@ -199,7 +199,7 @@
               }
             ],
             "data": {
-              "symbol": "mykey"
+              "symbol": "LoRaKey"
             }
           }
         }
