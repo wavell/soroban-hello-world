@@ -1,0 +1,304 @@
+{
+  "generators": {
+    "address": 1,
+    "nonce": 0
+  },
+  "auth": [
+    [],
+    []
+  ],
+  "ledger": {
+    "protocol_version": 20,
+    "sequence_number": 0,
+    "timestamp": 0,
+    "network_id": "0000000000000000000000000000000000000000000000000000000000000000",
+    "base_reserve": 0,
+    "min_persistent_entry_ttl": 4096,
+    "min_temp_entry_ttl": 16,
+    "max_entry_ttl": 6312000,
+    "ledger_entries": [
+      [
+        {
+          "contract_data": {
+            "contract": "CAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD2KM",
+            "key": {
+              "symbol": "mykey"
+            },
+            "durability": "persistent"
+          }
+        },
+        [
+          {
+            "last_modified_ledger_seq": 0,
+            "data": {
+              "contract_data": {
+                "ext": "v0",
+                "contract": "CAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD2KM",
+                "key": {
+                  "symbol": "mykey"
+                },
+                "durability": "persistent",
+                "val": {
+                  "i32": 42
+                }
+              }
+            },
+            "ext": "v0"
+          },
+          4095
+        ]
+      ],
+      [
+        {
+          "contract_data": {
+            "contract": "CAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD2KM",
+            "key": "ledger_key_contract_instance",
+            "durability": "persistent"
+          }
+        },
+        [
+          {
+            "last_modified_ledger_seq": 0,
+            "data": {
+              "contract_data": {
+                "ext": "v0",
+                "contract": "CAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD2KM",
+                "key": "ledger_key_contract_instance",
+                "durability": "persistent",
+                "val": {
+                  "contract_instance": {
+                    "executable": {
+                      "wasm": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+                    },
+                    "storage": null
+                  }
+                }
+              }
+            },
+            "ext": "v0"
+          },
+          4095
+        ]
+      ],
+      [
+        {
+          "contract_code": {
+            "hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+          }
+        },
+        [
+          {
+            "last_modified_ledger_seq": 0,
+            "data": {
+              "contract_code": {
+                "ext": "v0",
+                "hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+                "code": ""
+              }
+            },
+            "ext": "v0"
+          },
+          4095
+        ]
+      ]
+    ]
+  },
+  "events": [
+    {
+      "event": {
+        "ext": "v0",
+        "contract_id": null,
+        "type_": "diagnostic",
+        "body": {
+          "v0": {
+            "topics": [
+              {
+                "symbol": "fn_call"
+              },
+              {
+                "bytes": "0000000000000000000000000000000000000000000000000000000000000001"
+              },
+              {
+                "symbol": "store_value"
+              }
+            ],
+            "data": {
+              "vec": [
+                {
+                  "symbol": "mykey"
+                },
+                {
+                  "i32": 42
+                }
+              ]
+            }
+          }
+        }
+      },
+      "failed_call": false
+    },
+    {
+      "event": {
+        "ext": "v0",
+        "contract_id": "0000000000000000000000000000000000000000000000000000000000000001",
+        "type_": "diagnostic",
+        "body": {
+          "v0": {
+            "topics": [
+              {
+                "symbol": "fn_return"
+              },
+              {
+                "symbol": "store_value"
+              }
+            ],
+            "data": "void"
+          }
+        }
+      },
+      "failed_call": false
+    },
+    {
+      "event": {
+        "ext": "v0",
+        "contract_id": null,
+        "type_": "diagnostic",
+        "body": {
+          "v0": {
+            "topics": [
+              {
+                "symbol": "fn_call"
+              },
+              {
+                "bytes": "0000000000000000000000000000000000000000000000000000000000000001"
+              },
+              {
+                "symbol": "retrieve_value"
+              }
+            ],
+            "data": {
+              "symbol": "mykey"
+            }
+          }
+        }
+      },
+      "failed_call": false
+    },
+    {
+      "event": {
+        "ext": "v0",
+        "contract_id": "0000000000000000000000000000000000000000000000000000000000000001",
+        "type_": "diagnostic",
+        "body": {
+          "v0": {
+            "topics": [
+              {
+                "symbol": "log"
+              }
+            ],
+            "data": {
+              "vec": [
+                {
+                  "string": "caught panic 'HostError: Error(Context, InternalError)\\n\\nEvent log (newest first):\\n   0: [Diagnostic Event] topics:[error, Error(Context, InternalError)], data:\"escalating error to panic\"\\n   1: [Diagnostic Event] topics:[error, Error(Context, InternalError)], data:\"Current context has no contract ID\"\\n\\nBacktrace (newest first):\\n   0: soroban_env_host::budget::Budget::with_shadow_mode\\n             at /home/pair/.cargo/registry/src/index.crates.io-6f17d22bba15001f/soroban-env-host-20.3.0/src/budget.rs:762:21\\n   1: soroban_env_host::host::Host::with_debug_mode\\n             at /home/pair/.cargo/registry/src/index.crates.io-6f17d22bba15001f/soroban-env-host-20.3.0/src/host.rs:541:24\\n   2: soroban_env_host::host::error::<impl soroban_env_host::host::Host>::maybe_get_debug_info\\n             at /home/pair/.cargo/registry/src/index.crates.io-6f17d22bba15001f/soroban-env-host-20.3.0/src/host/error.rs:287:13\\n   3: soroban_env_host::host::error::<impl soroban_env_host::host::Host>::error::{{closure}}\\n             at /home/pair/.cargo/registry/src/index.crates.io-6f17d22bba15001f/soroban-env-host-20.3.0/src/host/error.rs:271:23\\n   4: soroban_env_host::budget::Budget::with_shadow_mode\\n             at /home/pair/.cargo/registry/src/index.crates.io-6f17d22bba15001f/soroban-env-host-20.3.0/src/budget.rs:762:21\\n   5: soroban_env_host::host::Host::with_debug_mode\\n             at /home/pair/.cargo/registry/src/index.crates.io-6f17d22bba15001f/soroban-env-host-20.3.0/src/host.rs:541:24\\n   6: soroban_env_host::host::error::<impl soroban_env_host::host::Host>::error\\n             at /home/pair/.cargo/registry/src/index.crates.io-6f17d22bba15001f/soroban-env-host-20.3.0/src/host/error.rs:258:9\\n   7: <soroban_env_host::host::Host as soroban_env_common::env::EnvBase>::escalate_error_to_panic\\n             at /home/pair/.cargo/registry/src/index.crates.io-6f17d22bba15001f/soroban-env-host-20.3.0/src/host.rs:693:26\\n   8: soroban_sdk::env::internal::reject_err::{{closure}}\\n             at /home/pair/.cargo/registry/src/index.crates.io-6f17d22bba15001f/soroban-sdk-20.5.0/src/env.rs:52:23\\n   9: core::result::Result<T,E>::map_err\\n             at /rustc/9b00956e56009bab2aa15d7bff10916599e3d6d6/library/core/src/result.rs:829:27\\n  10: soroban_sdk::env::internal::reject_err\\n             at /home/pair/.cargo/registry/src/index.crates.io-6f17d22bba15001f/soroban-sdk-20.5.0/src/env.rs:52:9\\n  11: <soroban_sdk::env::Env as soroban_env_common::env::Env>::has_contract_data\\n             at /home/pair/.cargo/registry/src/index.crates.io-6f17d22bba15001f/soroban-sdk-20.5.0/src/env.rs:1639:13\\n  12: soroban_sdk::storage::Storage::has_internal\\n             at /home/pair/.cargo/registry/src/index.crates.io-6f17d22bba15001f/soroban-sdk-20.5.0/src/storage.rs:289:9\\n  13: soroban_sdk::storage::Storage::get\\n             at /home/pair/.cargo/registry/src/index.crates.io-6f17d22bba15001f/soroban-sdk-20.5.0/src/storage.rs:182:12\\n      soroban_sdk::storage::Persistent::get\\n             at /home/pair/.cargo/registry/src/index.crates.io-6f17d22bba15001f/soroban-sdk-20.5.0/src/storage.rs:317:9\\n  14: hello_world::SimpleStorageContract::retrieve_value\\n             at src/lib.rs:52:9\\n  15: hello_world::__retrieve_value::invoke_raw\\n             at src/lib.rs:43:1\\n  16: hello_world::__retrieve_value::invoke_raw_slice\\n             at src/lib.rs:43:1\\n  17: core::ops::function::Fn::call\\n             at /rustc/9b00956e56009bab2aa15d7bff10916599e3d6d6/library/core/src/ops/function.rs:79:5\\n  18: hello_world::__SimpleStorageContract_fn_set_registry::call::{{closure}}\\n             at src/lib.rs:40:1\\n  19: core::option::Option<T>::map\\n             at /rustc/9b00956e56009bab2aa15d7bff10916599e3d6d6/library/core/src/option.rs:1073:29\\n  20: hello_world::__SimpleStorageContract_fn_set_registry::call\\n             at src/lib.rs:40:1\\n  21: <hello_world::SimpleStorageContract as soroban_sdk::testutils::ContractFunctionSet>::call\\n             at src/lib.rs:40:1\\n  22: <soroban_sdk::env::Env::register_contract::InternalContractFunctionSet<T> as soroban_env_host::host::frame::ContractFunctionSet>::call\\n             at /home/pair/.cargo/registry/src/index.crates.io-6f17d22bba15001f/soroban-sdk-20.5.0/src/env.rs:616:17\\n  23: soroban_env_host::host::frame::<impl soroban_env_host::host::Host>::call_n_internal::{{closure}}::{{closure}}\\n             at /home/pair/.cargo/registry/src/index.crates.io-6f17d22bba15001f/soroban-env-host-20.3.0/src/host/frame.rs:765:60\\n  24: core::ops::function::FnOnce::call_once\\n             at /rustc/9b00956e56009bab2aa15d7bff10916599e3d6d6/library/core/src/ops/function.rs:250:5\\n  25: <core::panic::unwind_safe::AssertUnwindSafe<F> as core::ops::function::FnOnce<()>>::call_once\\n             at /rustc/9b00956e56009bab2aa15d7bff10916599e3d6d6/library/core/src/panic/unwind_safe.rs:272:9\\n  26: std::panicking::try::do_call\\n             at /rustc/9b00956e56009bab2aa15d7bff10916599e3d6d6/library/std/src/panicking.rs:552:40\\n  27: __rust_try\\n  28: std::panicking::try\\n             at /rustc/9b00956e56009bab2aa15d7bff10916599e3d6d6/library/std/src/panicking.rs:516:19\\n  29: std::panic::catch_unwind\\n             at /rustc/9b00956e56009bab2aa15d7bff10916599e3d6d6/library/std/src/panic.rs:146:14\\n  30: soroban_env_host::testutils::call_with_suppressed_panic_hook\\n             at /home/pair/.cargo/registry/src/index.crates.io-6f17d22bba15001f/soroban-env-host-20.3.0/src/testutils.rs:57:15\\n  31: soroban_env_host::host::frame::<impl soroban_env_host::host::Host>::call_n_internal::{{closure}}\\n             at /home/pair/.cargo/registry/src/index.crates.io-6f17d22bba15001f/soroban-env-host-20.3.0/src/host/frame.rs:767:25\\n  32: soroban_env_host::host::frame::<impl soroban_env_host::host::Host>::with_frame\\n             at /home/pair/.cargo/registry/src/index.crates.io-6f17d22bba15001f/soroban-env-host-20.3.0/src/host/frame.rs:441:19\\n  33: soroban_env_host::host::frame::<impl soroban_env_host::host::Host>::call_n_internal\\n             at /home/pair/.cargo/registry/src/index.crates.io-6f17d22bba15001f/soroban-env-host-20.3.0/src/host/frame.rs:742:24\\n  34: <soroban_env_host::host::Host as soroban_env_common::vmcaller_env::VmCallerEnv>::call\\n             at /home/pair/.cargo/registry/src/index.crates.io-6f17d22bba15001f/soroban-env-host-20.3.0/src/host.rs:2191:19\\n  35: soroban_env_common::vmcaller_env::<impl soroban_env_common::env::Env for T>::call\\n             at /home/pair/.cargo/registry/src/index.crates.io-6f17d22bba15001f/soroban-env-common-20.3.0/src/vmcaller_env.rs:195:84\\n  36: <soroban_sdk::env::Env as soroban_env_common::env::Env>::call\\n             at /home/pair/.cargo/registry/src/index.crates.io-6f17d22bba15001f/soroban-sdk-20.5.0/src/env.rs:1639:50\\n  37: soroban_sdk::env::Env::invoke_contract\\n             at /home/pair/.cargo/registry/src/index.crates.io-6f17d22bba15001f/soroban-sdk-20.5.0/src/env.rs:366:18\\n  38: hello_world::SimpleStorageContractClient::retrieve_value\\n             at src/lib.rs:43:1\\n  39: hello_world::test::test_store_and_retrieve_value\\n             at src/test.rs:60:24\\n  40: hello_world::test::test_store_and_retrieve_value::{{closure}}\\n             at src/test.rs:45:35\\n  41: core::ops::function::FnOnce::call_once\\n             at /rustc/9b00956e56009bab2aa15d7bff10916599e3d6d6/library/core/src/ops/function.rs:250:5\\n\\n' from contract function 'Symbol(obj#11)'"
+                },
+                {
+                  "symbol": "mykey"
+                }
+              ]
+            }
+          }
+        }
+      },
+      "failed_call": true
+    },
+    {
+      "event": {
+        "ext": "v0",
+        "contract_id": "0000000000000000000000000000000000000000000000000000000000000001",
+        "type_": "diagnostic",
+        "body": {
+          "v0": {
+            "topics": [
+              {
+                "symbol": "error"
+              },
+              {
+                "error": {
+                  "wasm_vm": "invalid_action"
+                }
+              }
+            ],
+            "data": {
+              "string": "caught error from function"
+            }
+          }
+        }
+      },
+      "failed_call": true
+    },
+    {
+      "event": {
+        "ext": "v0",
+        "contract_id": null,
+        "type_": "diagnostic",
+        "body": {
+          "v0": {
+            "topics": [
+              {
+                "symbol": "error"
+              },
+              {
+                "error": {
+                  "wasm_vm": "invalid_action"
+                }
+              }
+            ],
+            "data": {
+              "vec": [
+                {
+                  "string": "contract call failed"
+                },
+                {
+                  "symbol": "retrieve_value"
+                },
+                {
+                  "vec": [
+                    {
+                      "symbol": "mykey"
+                    }
+                  ]
+                }
+              ]
+            }
+          }
+        }
+      },
+      "failed_call": false
+    },
+    {
+      "event": {
+        "ext": "v0",
+        "contract_id": null,
+        "type_": "diagnostic",
+        "body": {
+          "v0": {
+            "topics": [
+              {
+                "symbol": "error"
+              },
+              {
+                "error": {
+                  "wasm_vm": "invalid_action"
+                }
+              }
+            ],
+            "data": {
+              "string": "escalating error to panic"
+            }
+          }
+        }
+      },
+      "failed_call": false
+    }
+  ]
+}

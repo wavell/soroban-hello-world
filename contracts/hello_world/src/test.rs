@@ -51,7 +51,8 @@ fn test_store_and_retrieve_value() {
 
 	// let key = symbol!("mykey");
 	let key = symbol_short!("mykey");
-	let value = 42;
+	// let value = 42;
+    let value = vec![&env, (2, 20)];
 
 	// Store the value
 	client.store_value(&key, &value);
