@@ -37,4 +37,18 @@ impl GeoCoordinate {
     }
 }
 
+#[contract]
+pub struct SimpleStorageContract;
+
+#[contractimpl]
+impl SimpleStorageContract {
+    pub fn store_value(env: Env, key: Symbol, value: i32) {
+        env.storage().persistent().set(&key, &value);
+    }
+
+    pub fn retrieve_value(env: Env, key: Symbol) -> Option<i32> {
+        env.storage().persistent().get(&key)
+    }
+}
+
 mod test;
