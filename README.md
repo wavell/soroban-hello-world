@@ -1,4 +1,45 @@
-# Soroban Project
+
+# Lora Demo Installation
+## General Stella installation instructions
+https://developers.stellar.org/docs/smart-contracts/getting-started/setup
+
+## Walkthrough
+## Install specific version of cargo cli
+```
+cargo install --git https://github.com/stellar/stellar-cli soroban-cli
+```
+
+```
+git clone https://github.com/wavell/lora-demo.git
+
+## probably don;t need to do
+soroban network add \
+  --global testnet \
+  --rpc-url https://soroban-testnet.stellar.org:443 \
+  --network-passphrase "Test SDF Network ; September 2015"
+
+## probably don;t need to do	
+soroban keys generate --global alice --network testnet
+	
+cargo build --target wasm32-unknown-unknown --release
+
+soroban keys generate alice --network testnet
+
+## returns the contract id ... save it for later
+soroban contract deploy   --wasm target/wasm32-unknown-unknown/release/hello_world.wasm   --source "alice"   --network testnet
+                                      
+## Useful network commands                   
+soroban network ls                                
+soroban keys generate alice --network testnet
+
+
+## Check the contract parameters                                                                                                  
+soroban contract invoke --id <<your contract id>> --network testnet -h
+
+## Call the smart contract  
+soroban contract invoke --id <<your contract id>> --network testnet --source alice -- store_value --value '[[-42, -42]]' --key hello
+soroban contract invoke --id <<your contract id>> --network testnet --source alice -- retrieve_value --key hello
+```
 
 ## Project Structure
 
