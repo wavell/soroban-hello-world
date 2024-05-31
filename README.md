@@ -44,6 +44,7 @@ soroban contract invoke --id <<your contract id>> --network testnet --source ali
 To run the web server that runs as a wrapper for the soroban client
 ```
 bun run sorobanserver.js
+
 ## Curl comnand to test the soroban wrapper
 curl -X POST http://localhost:3000/invoke   -H "Content-Type: application/json"   -d '{
     "id": "<<your contract id>>",
