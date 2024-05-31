@@ -40,7 +40,20 @@ soroban contract invoke --id <<your contract id>> --network testnet -h
 soroban contract invoke --id <<your contract id>> --network testnet --source alice -- store_value --value '[[-42, -42]]' --key hello
 soroban contract invoke --id <<your contract id>> --network testnet --source alice -- retrieve_value --key hello
 ```
+## Soroban Cli Wrapper
+To run the web server that runs as a wrapper for the soroban client
+```
+bun run sorobanserver.js
+## Curl comnand to test the soroban wrapper
+curl -X POST http://localhost:3000/invoke   -H "Content-Type: application/json"   -d '{
+    "id": "<<your contract id>>",
+    "sourceAccount": "alice",
+    "value": "[[-42, -42]]",
+    "key": "hello"
+  }'
 
+```
+## 
 ## Project Structure
 
 This repository uses the recommended structure for a Soroban project:
