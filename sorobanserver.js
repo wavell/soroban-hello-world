@@ -10,6 +10,7 @@ app.use(express.urlencoded({ extended: true }));
 app.post('/invoke', (req, res) => {
   const { id, sourceAccount, value, key } = req.body;
 
+	console.log("executing post");
   if (!id || !sourceAccount || !value || !key) {
     return res.status(400).send('Missing required parameters');
   }
