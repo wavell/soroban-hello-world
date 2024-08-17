@@ -20,6 +20,8 @@ soroban network add \
 
 ## probably don't need to do	
 soroban keys generate --global alice --network testnet
+
+rustup target add wasm32-unknown-unknown
 	
 cargo build --target wasm32-unknown-unknown --release
 
