@@ -36,7 +36,7 @@ soroban keys generate alice --network testnet
 
 
 ## Check the contract parameters                                                                                                  
-soroban contract invoke --id <<your contract id>> --network testnet -h
+soroban contract invoke --id <<your contract id>> --network --source alice testnet -h
 
 ## Call the smart contract  
 soroban contract invoke --id <<your contract id>> --network testnet --source alice -- store_value --value '[[-42, -42]]' --key hello
